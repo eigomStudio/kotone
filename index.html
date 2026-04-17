@@ -4,8 +4,215 @@
   <meta charset="UTF-8">
   <title>kotone</title>
 </head>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --border: #e6e6ea;
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 56px auto;
+    padding: 0 18px;
+  }
+
+  .title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.app-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+  
+  header {
+    text-align: center;
+    padding: 28px 0 10px;
+  }
+
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .section {
+    margin: 26px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+
+  /* 🔹 画像の基本設定（常に必要） */
+  .feature img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    display: block;
+  }
+
+  .feature h2 {
+    margin: 0 0 10px 0;
+  }
+
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* 🔹 PCだけ横並び */
+  @media (min-width: 900px) {
+    .feature {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 見出しは上に横いっぱい */
+    .feature h2 {
+      grid-column: 1 / -1;
+    }
+
+    /* 画像は左 */
+    .feature img {
+      grid-column: 1;
+    }
+
+    /* 説明は右 */
+    .feature p {
+      grid-column: 2;
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin: 42px 0 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+
 <body>
-  <h1>kotone</h1>
-  <p>四声トレーニングアプリ</p>
+  <div class="wrap">
+    <header>
+      <div class="title-wrap">
+        <img src="../images/AppIcon.png" alt="App Icon" class="app-icon">
+        <h1>kotone</h1>
+      </div>
+      <p>四声トレーニングアプリ</p>
+    </header>
+
+    <!-- 1: Calendar -->
+    <section class="section">
+        <div class="feature">
+          <h2>Calendar View</h2>
+          <img src="../images/calendar.png" alt="Calendar View screenshot">
+          <p>
+            月間カレンダーで１ヶ月の服装（Outfit）データの記録をひと目で確認できます。<br>
+            服装データが登録されている日にはマークが表示されます。日付をタップすると、その日の衣服データが画面下に表示されるので、登録された服の写真やNoteの内容をすぐに確認できます。<br>
+            iOSの標準カレンダーと連携し、イベントを２つまで表示できます。<br>
+</p>
+      </div>
+    </section>
+
+    <!-- 2: Entry Clothes Data -->
+    <section class="section">
+        <div class="feature">
+          <h2>Entry Clothes Data</h2>
+            <iframe width="300" height="533" src="https://www.youtube.com/embed/WG4SPMcM3A4" frameborder="0" allowfullscreen>
+            </iframe>
+          <p>
+            カメラで撮影するか、写真ライブラリから選択して、服の写真を登録できます。クリップボードから画像をペーストすることも可能です。<br>
+            写真の背景を自動で切り抜く編集機能を備えており、背景色を整えて統一感のある表示にできます。<br>  
+            服はカテゴリーごとに管理されます。Outerwear、Suit、Jacket、Shirts などの標準カテゴリーに加え、ユーザーが独自のカテゴリーを追加することもできます。<br>
+            Note欄に購入日の記録や、ブランド名・色・サイズなどの情報を自由に入力できます。<br>
+          </p>
+      </div>
+    </section>
+
+    <!-- 3: Edit Clothes -->
+    <section class="section">
+      <div class="shot">
+        <div class="feature">
+          <h2>Edit Clothes</h2>
+          <img src="../images/edit.png" alt="Edit Clothes screenshot">
+          <p>
+            登録済みの衣服データを編集・更新できます。データはカテゴリーごとに整理されており、カテゴリー内で並べ替えを行うことも可能です。<br>
+            既存の情報を修正したり、新たに追加したりすることで、自分の好みに合わせて服装データを整えることができます。<br>
+          </p>
+      </div>
+    </section>
+
+    <!-- 4: Select Outfit -->
+    <section class="section">
+      <div class="shot">
+        <div class="feature">
+          <h2>Select Outfit</h2>
+          <img src="../images/select.png" alt="Select Outfit screenshot">
+          <p>
+            日々の服装は、登録されている服装一覧から選択して記録します。<br>
+            写真をタップすると拡大表示され、ピンチ操作でさらにズームすることができるので、シャツの柄や細かいディテールも確認しながら選択できます。<br>
+          </p>
+      </div>
+    </section>
+
+    <!-- 5: Weekly -->
+    <section class="section">
+      <div class="shot">
+        <div class="feature">
+          <h2>Weekly View</h2>
+          <img src="../images/weekly.png" alt="Weekly View screenshot">
+          <p>
+            服装データが表示されている日から過去7日間の服装記録を一覧で確認できます。<br>
+            画像をタップすると拡大表示でき、コーディネートの流れを振り返ることができます。<br>
+          </p>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section howto">
+      <h2 style="margin:2px 0 6px 0;">アプリの使い方</h2>
+      <ol>
+        <li><b>Add Clothes</b>ボタンをタップし、衣服データを入力する</li>
+        <li><b>Select</b>ボタンからカレンダーに衣服を記録する</li>
+        <li><b>Edit Outfit</b>ボタンをタップし、衣服データを管理する</li>
+        <li><b>Week</b>ボタンをタップし、Outfitが表示されている日を含む過去7日間の衣服データを表示する</li>
+      </ol>
+    </section>
+
+    <footer>© 2026 eigomStudio</footer>
+  </div>
 </body>
+</html>
+
 </html>
