@@ -88,31 +88,6 @@
     color: var(--muted);
   }
 
-  /* 🔹 PCだけ横並び */
-  @media (min-width: 900px) {
-    .feature {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-
-    /* 見出しは上に横いっぱい */
-    .feature h2 {
-      grid-column: 1 / -1;
-    }
-
-    /* 画像は左 */
-    .feature img {
-      grid-column: 1;
-    }
-
-    /* 説明は右 */
-    .feature p {
-      grid-column: 2;
-    }
-  }
-
   footer {
     text-align: center;
     margin: 42px 0 18px;
@@ -136,7 +111,7 @@
     <section class="section">
         <div class="feature">
           <h2>四声の練習画面</h2>
-          <img src="image/fig1.png" alt="Calendar View screenshot">
+          <img src="image/fig1.png" alt="sisheng practice screenshot" style="width: 100%; height: auto;">
           <p>
             グラフを見ながら声調の練習ができます。
           </p>
