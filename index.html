@@ -103,6 +103,39 @@
     font-size: 13px;
     color: var(--muted);
   }
+
+  /* PC版の設定（横並び） */
+.summary-container {
+  display: flex;
+  align-items: flex-start; /* 上揃え（中央なら center） */
+  gap: 20px;               /* 図と説明の間の隙間 */
+  margin-top: 20px;
+}
+
+.summary-image {
+  flex: 0 0 300px;         /* 図の横幅を300pxに固定（お好みで調整） */
+  width: 100%;             /* 枠内で100%表示 */
+  height: auto;            /* 縦横比を維持（これで細長くならない） */
+  border-radius: 10px;     /* 必要なら角丸に */
+}
+
+.summary-text {
+  flex: 1;                 /* 残りのスペースをすべて使う */
+}
+
+/* スマホ版の設定（縦並びに戻す） */
+@media (max-width: 600px) {
+  .summary-container {
+    flex-direction: column; /* 縦に並べる */
+    align-items: center;    /* 中央寄せ */
+  }
+  
+  .summary-image {
+    flex: 0 0 auto;
+    width: 100%;            /* スマホでは横幅いっぱい */
+    max-width: 300px;       /* でも大きくなりすぎないように */
+  }
+}
 </style>
 </head>
 
